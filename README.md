@@ -1,4 +1,4 @@
-# Classification of CHD using CNN+LSTM
+# Classification of CHD Cyanotic and Non-Cyanotic using CNN+LSTM
 
 ##  Project Overview
 
