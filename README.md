@@ -32,15 +32,6 @@ To extract the dataset files:
     * **Normal:** `[1003, 1005, 1032, 1051, 1062, 1063, 1066, 1067, 1072, 1078, 1080, 1083, 1101, 1116, 1117, 1119, 1127, 1128, 1143, 1144]`
 
 * The number of frames (slices) for each patient varies within the raw NIfTI files. To ensure consistency for the deep learning models, all patient scans are standardized to a uniform length of 275 frames.
-    * **For patients with fewer than 275 frames:** Frames are duplicated from the middle sequence where the heart is clearly visible.
-        * *Example 1:* For a patient with 206 frames, 69 data points (frames 103-172) are duplicated from the middle to reach a total of 275 frames.
-        * *Example 2:* For a patient with 137 frames, the entire set of frames is duplicated and repeated to reach 275 frames.
-    * **For patients with more than 275 frames:** Excess frames are removed to standardize the length. For example, if a patient has 340 frames, 65 frames (340 - 275) are removed: 33 from the beginning and 32 from the end, ensuring an even distribution of removal.
-* NIfTI data is converted into PNG image format for easier processing by the deep learning frameworks.
-* Subsequently, the resolution of the data is resized from 512x512 pixels to 256x256 pixels. This reduction helps in making the model training process more memory-efficient and faster.
-* **Conclusion of Preprocessed Dataset:**
-    * Total folders (patients): 72
-    * Total image files (data): 19800
 
 ## CNN Basic (`cnn.ipynb`)
 
